@@ -74,7 +74,7 @@
     }
     
   
-    .listtable, th, td {
+    .listtable,.listtable th,.listtable td {
       font-size: 15px;
     }
   }

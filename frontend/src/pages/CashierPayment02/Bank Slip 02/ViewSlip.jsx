@@ -13,7 +13,7 @@ export default function ViewSlip() {
         <img src="" alt="slip" />
 
      </div>
-     <div className='button'>
+     <div className='Confirmationbutton'>
         <button >
         Confirm
      </button>

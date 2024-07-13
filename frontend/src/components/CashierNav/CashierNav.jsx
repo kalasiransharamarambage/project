@@ -37,7 +37,7 @@ const NavBar = () => {
           </div>
       </div>
       <div className="icons">
-      <span><img className='img05' src={se} alt="" /></span>
+      <span><input type="search" className='search_bar'/><img className='img05' src={se} alt="" /></span>
         <span><img className='img05' src={pic01} alt="" /></span>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './navbar.css'; 
 import pic01 from '../../assets/images/navbar/pic01.jpg'
-import se from '../assets/images/navbar/se.png'
+import se from '../../assets/images/navbar/se.png'
 
 const NavBar = () => {
   const [EmployeeDropdownOpen, setEmployeeDropdownOpen] = useState(false);
@@ -35,9 +35,9 @@ const NavBar = () => {
           >            <span className='salon'>Salon</span>
             {salonDropdownOpen && (
               <div className="dropdown-menu">
-                <a href="#">Hair</a>
-                <a href="#">Nails</a>
-                <a href="#">Spa</a>
+                <a href="#">Add Services</a>
+                <a href="#">Add products</a>
+                
               </div>
             )}
           </div>
@@ -57,7 +57,7 @@ const NavBar = () => {
           </div></div>
       </div>
       <div className="icons">
-      <span><img className='img05' src={se} alt="" /></span>
+      <span><input type="search" className='se_bar'/><img className='img05' src={se} alt="" /></span>
         <span><img className='img05' src={pic01} alt="" /></span>
       </div>
     </div>

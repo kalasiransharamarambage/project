@@ -1,0 +1,49 @@
+.report_topic{
+text-align: center;
+font-size: 50px;
+font-family: Kaushan Script;
+margin:0 0 5% 0;
+} 
+.details{
+    margin: 5%;
+}
+
+.reporttable th,.reporttable td{
+    border:1px solid;
+}
+
+.table_topic{
+    margin: 5%;
+}
+.reporttable{
+    margin:auto;
+    width: 80%;
+    text-align: center;
+}
+.downloadbtn{
+    background-color: #953050;
+    margin: 10%;
+
+}
+@media (max-width:768px) {
+
+    .report_topic{
+        font-size: 40px;
+        } 
+     
+        .table_topic{
+         font-size: 25px;
+        }
+        .reporttable{
+            font-size: 12px;
+
+        }
+        .downloadbtn{
+          font-size: 12px;
+        }
+        .details{
+            font-size: 15px;
+        }
+        
+    
+}

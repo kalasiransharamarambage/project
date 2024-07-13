@@ -21,7 +21,6 @@
   display: flex;
   justify-content:center;
 }
-
 .nav-links {
   display: flex;
   gap: 15px;
@@ -35,7 +34,11 @@
   
 
 }
-
+.se_bar{
+  border: 1px solid;
+  border-radius: 15px;
+  width: 150px;
+}
 
 .dropdown {
   position: relative;
@@ -53,6 +56,7 @@
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
+
   
 }
 
@@ -87,6 +91,7 @@
   
   .nav-links-container{
     padding: 10px;
+    margin-left: -40px;
 
 
   }

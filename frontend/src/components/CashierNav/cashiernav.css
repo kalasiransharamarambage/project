@@ -64,6 +64,11 @@
   .dropdown-menu a:hover{
    background-color: #e0e0e0;
   }
+  .search_bar{
+    border: 1px solid;
+    border-radius: 15px;
+    width:150px;
+  }
   .icons {
     flex: 1;
     display: flex;
@@ -87,7 +92,7 @@
     
     .nav-links-container{
       padding: 10px;
-  
+  margin-left: -70px;
   
     }
    

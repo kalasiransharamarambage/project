@@ -24,18 +24,17 @@
     margin-top: 25px;
 
 }
-
-.button{
-display: flex;
-justify-content: center;
-margin: 10px;
+.Confirmationbutton{
+    margin: auto;
 }
-.button button{
+
+.Confirmationbutton button {
+  
     border: none;
     border-radius: 20px;
     padding: 5px 60px 5px 60px;
     background-color:#24c71e ;
 }
-.button button:hover{
+.Confirmationbutton button:hover{
     background-color: #33f12d;
 }

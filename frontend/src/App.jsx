@@ -20,16 +20,18 @@ import BeauticianProfile from './pages/BeauticianProfile/BeauticianProfile'
 
 import Admin01Cashier from './pages/AdminCashier/Admin01Cashier'
 import AdminHome from './pages/AdminHome/AdminHome'
-import BookingDetail from './pages/BookingDetails/BookingDetail'
 import CashOnDelivery from './pages/CashierPayment01/CashOnDelivery'
 import BankSlip from './pages/CashierPayment02/Bank Slip 01/BankSlip'
 import ViewSlip from './pages/CashierPayment02/Bank Slip 02/ViewSlip'
 import CashierSchedule from './pages/CashierSchedule/CashierSchedule'
 import Admin01cashierRegister from './pages/CashierRegister/Admin01cashierReg'
 import Salary from './pages/Salary/Salary'
-import Report01 from './pages/AppointmentReport/Report01'
+import Report01 from './pages/MonthlyReport01/Report01'
 import MyLeaves from './pages/MyLeaves/MyLeaves'
 import UpdateCashier from './pages/UpdateCashier/UpdateCashier'
+import BookingDetail from "./pages/BookingDetails/BookingDetail"
+
+
 
 
 
@@ -78,6 +80,7 @@ function App() {
                   <Route path="UpdateCashier" element={<UpdateCashier />} />
                   <Route path="/" element={<Admin01Cashier />} />
                   <Route path="/updatecashier/:id" element={<UpdateCashier />} />
+        <Route path="/booking/:id" element={<BookingDetail />} />
 
             
 
