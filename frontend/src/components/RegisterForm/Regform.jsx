@@ -3,7 +3,6 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import "./regform.css";
 
@@ -20,7 +19,14 @@ export default function Regform() {
     educationQualifications: "",
     experience: "",
     additionalDetails: "",
+    password: ""
   });
+  const [errors, setErrors] = useState({
+    firstname: "",
+    lastname: "",
+    mobileno: ""
+  });
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -40,10 +46,32 @@ export default function Regform() {
 
     setValidated(true);
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let error = "";
+
+    if (name === "firstname" || name === "lastname") {
+      const lettersRegex = /^[a-zA-Z]*$/;
+      if (!lettersRegex.test(value)) {
+        error = "Name can only contain letters.";
+      } else {
+        setFormData({ ...formData, [name]: value });
+      }
+    } else if (name === "mobileno") {
+      const numbersRegex = /^[0-9]*$/;
+      if (!numbersRegex.test(value) || value.length > 10) {
+        error = "Mobile number must be exactly 10 digits and contain only numbers.";
+      } else {
+        setFormData({ ...formData, [name]: value });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+
+    setErrors({ ...errors, [name]: error });
   };
+
   return (
     <div className="fulform">
       <div className="form">
@@ -61,8 +89,11 @@ export default function Regform() {
                   name="firstname"
                   value={formData.firstname}
                   onChange={handleChange}
+                  isInvalid={!!errors.firstname}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  {errors.firstname || "Looks good!"}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="4" controlId="validationCustom02">
                 <Form.Control
@@ -72,7 +103,11 @@ export default function Regform() {
                   name="lastname"
                   value={formData.lastname}
                   onChange={handleChange}
+                  isInvalid={!!errors.lastname}
                 />
+                <Form.Control.Feedback type="invalid">
+                  {errors.lastname || "Looks good!"}
+                </Form.Control.Feedback>
               </Form.Group>
             </Row>
             <Row className="mb-3">
@@ -134,8 +169,11 @@ export default function Regform() {
                   name="mobileno"
                   value={formData.mobileno}
                   onChange={handleChange}
+                  isInvalid={!!errors.mobileno}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  {errors.mobileno || "Looks good!"}
+                </Form.Control.Feedback>
               </Form.Group>
             </Row>
             <Row className="mb-3">
@@ -208,7 +246,6 @@ export default function Regform() {
                 <Form.Control
                   as="textarea"
                   rows={3}
-                
                   type="text"
                   placeholder=" "
                   name="additionalDetails"
@@ -218,7 +255,22 @@ export default function Regform() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
             </Row>
-
+            <Row className="mb-3">
+              <Form.Group as={Col} md="8" controlId="validationCustomPassword">
+                <Form.Label>Password :</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="Enter password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid password.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
             <Button className="btnreg" type="submit">
               Register
             </Button>

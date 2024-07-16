@@ -8,15 +8,14 @@
     font-family: Kaushan Script,cursive;
 
 }
-.saltr th,.saltr td{
-  width:25% ;
-}
+
 .rounded-saltable{
     margin:auto;
     margin-top:5%;
    font-size: 15px;
     width: 90%;
     padding: 0;
+    margin-bottom: 2%;
     
 }
 .saltr {
@@ -39,7 +38,7 @@
   }
   
   .rounded-saltable thead th {
-    background-color: #a8c3ce; 
+    background-color: #99a5ee63; 
   }
   .rounded-saltable thead td {
     background-color: #c1d0d6 !important; 
@@ -68,6 +67,9 @@
     .topicBox{
       height: 80px;
       font-size: 30px;
+    }
+    .saltr th,.saltr td{
+      width:25% ;
     }
     
   }

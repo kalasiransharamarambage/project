@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Topicbox from '../../components/CashierTopic/Topicbox'
 import './Admin01Cashier.css'
+import Add from '../../components/Add/Add'
+
 
 
 export default function Admin01Cashier() {
@@ -31,6 +33,7 @@ export default function Admin01Cashier() {
   return (
     <div >
      <Topicbox/>
+     <Add/>
      <div className="list-container">
       <h1>Cashier List</h1>
       <table className='listtable'>

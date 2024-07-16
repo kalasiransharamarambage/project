@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import bgimg2 from '../assets/img/bgimg2.jpg';
+import bgimg2 from '../../assets/Form/bgimg2.jpg';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');

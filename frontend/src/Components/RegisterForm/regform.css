@@ -21,15 +21,15 @@ border-width: 10px;
     font-size: 120%;
     font-weight: 500;
     margin-left:0% ;
-     background-color: #C3689F;
-     border-color: #C3689F;
+     background-color: #bb446a;
+     border-color: #bb446a;
   display: flex;
   justify-content: center;
 }
 .btnreg:hover{
-    background-color: #974f7a; 
+    background-color: #ec6891; 
     color: black;
-    border-color: #C3689F;
+    border-color: #bb446a;
 }
 .topic{
     text-align: center;

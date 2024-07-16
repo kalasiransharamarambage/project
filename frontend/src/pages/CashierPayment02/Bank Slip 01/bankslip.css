@@ -13,7 +13,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: rgb(228, 229, 230);
-  
+border-radius: 15px;  
     text-align: center;
    
 }
@@ -22,12 +22,9 @@
  padding: 10px;
  width: 20%;
 }
- thead .sliprow{
-    background-color: #a5afc4;
- 
-  
-    
-}
+ .sliptable thead{
+    background-color: #99a5ee63;
+ }
 .sliptable td a{
     padding: 5px 20px 5px ;
     background-color: #24c71e;
@@ -58,11 +55,15 @@
       height: 80px;
       font-size: 30px;
     }
-    
+    .sliptable thead{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
   }
   @media (max-width: 512px){
     .sliptable td a{
         padding: 5px;
     }
+    
  
   }

@@ -3,7 +3,7 @@
 }
 .list-container {
     width: 90%;
-    max-width: 1000px;
+   
     margin: 50px auto;
     background-color: #ffffff;
     border: 2px solid #e8e8e8;
@@ -25,7 +25,7 @@
   }
   
  .listtable thead {
-    background-color: #d274a7;
+    background-color: #bb446a;
     color: white;
   }
   
@@ -42,7 +42,7 @@
   .D_btn {
     padding: 5px 10px;
     color: #fff !important;
-    background-color: #d274a7 ;
+    background-color: #953050 ;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -51,7 +51,7 @@
   
   
   .D_btn:hover {
-    background-color: #ad477a !important;
+    background-color: #bb446a !important;
   }
   
   /* Media queries for responsiveness */

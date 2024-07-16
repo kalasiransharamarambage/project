@@ -18,7 +18,9 @@ import AddBeauticians from './pages/AddBeauticians/AddBeauticians'
 import Beauticianlist from './pages/Beauticianlist/Beauticianlist'
 import BeauticianProfile from './pages/BeauticianProfile/BeauticianProfile'
 
+import CashierLayout from "./Layout/CashierLayout";
 import Admin01Cashier from './pages/AdminCashier/Admin01Cashier'
+import Admin01CashierReg from './pages/CashierRegister/Admin01cashierReg'
 import AdminHome from './pages/AdminHome/AdminHome'
 import CashOnDelivery from './pages/CashierPayment01/CashOnDelivery'
 import BankSlip from './pages/CashierPayment02/Bank Slip 01/BankSlip'
@@ -30,6 +32,8 @@ import Report01 from './pages/MonthlyReport01/Report01'
 import MyLeaves from './pages/MyLeaves/MyLeaves'
 import UpdateCashier from './pages/UpdateCashier/UpdateCashier'
 import BookingDetail from "./pages/BookingDetails/BookingDetail"
+import NavBar from "./components/Navigationbar/Navbar";
+import CashierLogin from './pages/CashierLogin/CashierLogin'
 
 
 
@@ -37,59 +41,65 @@ import BookingDetail from "./pages/BookingDetails/BookingDetail"
 
 
 function App() {
-  
+
 
   return (
-    
+
     <Router>
-        <Routes>
-{/*
+      <Routes>
+        {/*
               <Route path="/" element={<MainLayout />}>*/}
-                    
-                  <Route path="Allservices" element={<AllServices />} />
-                  <Route path="Bridal" element={<Bridal />} />
-                  <Route path="Facialcleanup" element={<Facialcleanup />} />
-                  <Route path="Haircolour" element={<Haircolour />} />
-                  <Route path="Haircuts" element={< Haircuts/>} />
-                  <Route path="Makeup" element={<Makeup />} />
-                  <Route path="Nails" element={<Nails/>} />
-                  <Route path="Threading" element={<Threading/>} />
-                  <Route path="Beauticians" element={<Beauticians/>} />
+
+<Route path="CashierLogin" element={<CashierLogin />} />
+<Route path="Allservices" element={<AllServices />} />
+        <Route path="Bridal" element={<Bridal />} />
+        <Route path="Facialcleanup" element={<Facialcleanup />} />
+        <Route path="Haircolour" element={<Haircolour />} />
+        <Route path="Haircuts" element={< Haircuts />} />
+        <Route path="Makeup" element={<Makeup />} />
+        <Route path="Nails" element={<Nails />} />
+        <Route path="Threading" element={<Threading />} />
+        <Route path="Beauticians" element={<Beauticians />} />
 
 
-               <Route path="/" element={<AdminLayout />}>
-                  <Route path="Addserviceform" element={<Addserviceform />} />
-                  <Route path="Servicelist" element={<Servicelist />} />
-                  <Route path="AddBeauticians" element={<AddBeauticians />} />
-                  <Route path="Beauticianlist" element={<Beauticianlist />} />
-                  <Route path="BeauticianProfile" element={<BeauticianProfile />} />
+        <Route path="/" element={<AdminLayout />}>
+          <Route path="Addserviceform" element={<Addserviceform />} />
+          <Route path="Servicelist" element={<Servicelist />} />
+          <Route path="AddBeauticians" element={<AddBeauticians />} />
+          <Route path="Beauticianlist" element={<Beauticianlist />} />
+          <Route path="BeauticianProfile" element={<BeauticianProfile />} />
+          <Route path="Admin01Cashier" element={<Admin01Cashier />} />
+        <Route path="Admin01CashierReg" element={<Admin01CashierReg />} />
+        
+        </Route>
 
-              </Route>
-
-                  <Route path="Admin01Cashier" element={<Admin01Cashier />} />
-                  <Route path="AdminHome" element={<AdminHome />} />
-                  <Route path="BookingDetail" element={<BookingDetail />} />
-                  <Route path="CashOnDelivery" element={<CashOnDelivery />} />
-                  <Route path="BankSlip" element={<BankSlip />} />
-                  <Route path="ViewSlip" element={<ViewSlip />} />
-                  <Route path="CashierSchedule" element={<CashierSchedule />} />
-                  <Route path="Admin01cashierRegister" element={<Admin01cashierRegister />} />
-                  <Route path="Salary" element={<Salary />} />
-                  <Route path="Report01" element={<Report01 />} />
-                  <Route path="MyLeaves" element={<MyLeaves />} />
-                  <Route path="UpdateCashier" element={<UpdateCashier />} />
-                  <Route path="/" element={<Admin01Cashier />} />
-                  <Route path="/updatecashier/:id" element={<UpdateCashier />} />
+        <Route path="/" element={<CashierLayout />}>
+        
+      <Route path="NavBar" element={<NavBar />} />
+        <Route path="AdminHome" element={<AdminHome />} />
+        <Route path="BookingDetail" element={<BookingDetail />} />
+        <Route path="CashOnDelivery" element={<CashOnDelivery />} />
+        <Route path="BankSlip" element={<BankSlip />} />
+        <Route path="/ViewSlip/:id" element={<ViewSlip />} />
+        <Route path="CashierSchedule" element={<CashierSchedule />} />
+        <Route path="Admin01cashierRegister" element={<Admin01cashierRegister />} />
+        <Route path="Salary" element={<Salary />} />
+        <Route path="Report01" element={<Report01 />} />
+        <Route path="MyLeaves" element={<MyLeaves />} />
+        <Route path="UpdateCashier" element={<UpdateCashier />} />
+        <Route path="/" element={<Admin01Cashier />} />
+        <Route path="/updatecashier/:id" element={<UpdateCashier />} />
         <Route path="/booking/:id" element={<BookingDetail />} />
 
-            
-
-             
-        
-         </Routes>
+        </Route>
 
 
-     </Router>
+
+
+      </Routes>
+
+
+    </Router>
   )
 
 }

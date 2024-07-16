@@ -30,14 +30,9 @@
   text-decoration: none;
   color: #000;
     margin-right: 10%;
-  
-  
-
 }
-.se_bar{
-  border: 1px solid;
-  border-radius: 15px;
-  width: 150px;
+.nav-links a:hover{
+  color: #000;
 }
 
 .dropdown {
@@ -56,6 +51,7 @@
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
+  width: auto;
 
   
 }
@@ -63,10 +59,11 @@
 .dropdown-menu a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  padding: 5px 5px;
+  padding: 5px 2px;
 }
 .dropdown-menu a:hover{
  background-color: #e0e0e0;
+ color: #bb446a;
 }
 .icons {
   flex: 1;
@@ -79,10 +76,12 @@
   cursor: pointer;
 }
 .img05{
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  border: 1px solid;
 }
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction:column;

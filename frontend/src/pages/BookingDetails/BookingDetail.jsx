@@ -14,6 +14,7 @@ export default function BookingDetail() {
   const [paymentStatus, setPaymentStatus] = useState("Pending");
   const [isPaid, setIsPaid] = useState(false);
   const [loading, setLoading] = useState(true); // Loading state
+  const [availableServices, setAvailableServices] = useState([]); // State for available services
   const { id } = useParams();
 
   useEffect(() => {
@@ -32,20 +33,20 @@ export default function BookingDetail() {
       });
   }, [id]);
 
-  const serviceOptions = [
-    { name: "Facial cleanup", price: 1200 },
-    { name: "Service 02", price: 1500 },
-    { name: "Service 03", price: 1800 },
-  ];
-
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/services') // Fetch available services
+      .then((response) => {
+        setAvailableServices(response.data.services);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('There was an error fetching the services!', error);
+      });
+  }, []);
   const handleSelectService = (service) => {
     const newServices = [...services, service];
-    const Total = (appointment.Total_price);
-    const newTotal = newServices.reduce((sum, s) => sum + s.price,0);
-    const totalWithAppointmentPrice = newTotal +Total ;
-   console.log(newTotal);
-   console.log(Total);
-   console.log(totalWithAppointmentPrice);
+    const totalWithAppointmentPrice = newServices.reduce((sum, s) => sum + s.price, appointment.Total_price);
 
     setServices(newServices);
     setTotal(totalWithAppointmentPrice);
@@ -117,6 +118,7 @@ export default function BookingDetail() {
       </div>
 
       <div className="content">
+      
         <div className="table01">
           <table>
           
@@ -143,28 +145,21 @@ export default function BookingDetail() {
           </table>
         </div>
         <div>
-          <div className="button-container">
-            <Dropdown className="drop">
-              <Dropdown.Toggle
-                id="dropdown-basic"
-                className="servicedropdown"
-                disabled={isPaid}
-              >
+        <div className="button-container">
+            <Dropdown className="drop" >
+              <Dropdown.Toggle id="dropdown-basic" className="servicedropdown" disabled={isPaid}>
                 Add Service
               </Dropdown.Toggle>
               <Dropdown.Menu className="Menu">
-                {serviceOptions.map((service, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handleSelectService(service)}
-                    className="Item"
-                  >
+                {availableServices.map((service, index) => (
+                  <Dropdown.Item key={index} onClick={() => handleSelectService(service)} className="Item">
                     {service.name}
                   </Dropdown.Item>
                 ))}
               </Dropdown.Menu>
             </Dropdown>
           </div>
+        
           <div className="table02">
             <table>
              <p> <b>Billing Details</b></p>
@@ -220,6 +215,7 @@ export default function BookingDetail() {
             >
               Pay
             </button>
+            
           </div>
         </div>
       </div>

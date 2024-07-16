@@ -9,13 +9,23 @@
 }
 .cashtable{
     width:80%;
-    margin: 5%;
-    background-color: rgb(218, 220, 221);
-    border-radius: 15px;
+    margin: auto;
     text-align: center;
-   
+    margin-top: 5%;
+}
+.middlerow,.lastrow{
+    background-color: rgba(240, 240, 240, 0.745);
+
+}
+.middlerow:hover{
+    background-color: rgba(230, 227, 227, 0.745);
+
 }
 .cashtable th,.cashtable td{
  padding: 10px;
+ 
+}
+.firstrow  {    
+background-color: #99a5ee63;
  
 }
